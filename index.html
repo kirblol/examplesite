@@ -5,18 +5,24 @@
     <title>Cookie Logger</title>
     <script>
         window.onload = function() {
-            var params = new URLSearchParams(window.location.search);
-            var cookieData = params.get('cookie');
+            try {
+                var params = new URLSearchParams(window.location.search);
+                var cookieData = params.get('cookie');
 
-            if (cookieData) {
-                console.log('Logged Cookie:', cookieData);
-                document.getElementById('log').textContent = 'Logged Cookie: ' + decodeURIComponent(cookieData);
+                if (cookieData) {
+                    console.log('Logged Cookie:', cookieData);
+                    document.getElementById('log').textContent = 'Logged Cookie: ' + decodeURIComponent(cookieData);
+                } else {
+                    document.getElementById('log').textContent = 'No cookie data found.';
+                }
+            } catch (error) {
+                console.error('Error processing the cookie data:', error);
             }
         }
     </script>
 </head>
 <body>
     <h1>Cookie Logger</h1>
-    <p id="log">No cookie data found.</p>
+    <p id="log">Loading...</p>
 </body>
 </html>
