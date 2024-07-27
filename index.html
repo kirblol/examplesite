@@ -5,16 +5,11 @@
     <title>Cookie Logger</title>
     <script>
         window.onload = function() {
-            // Get the query parameters from the URL
             var params = new URLSearchParams(window.location.search);
             var cookieData = params.get('cookie');
 
             if (cookieData) {
-                // Log the cookie data to the console (for demonstration purposes)
                 console.log('Logged Cookie:', cookieData);
-
-                // Optionally, send the cookie data to a server or log it somewhere else
-                // For this example, we'll just display it on the page
                 document.getElementById('log').textContent = 'Logged Cookie: ' + decodeURIComponent(cookieData);
             }
         }
