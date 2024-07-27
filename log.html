@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log Cookies</title>
+</head>
+<body>
+    <script>
+        // Get query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const cookieData = urlParams.get('cookie');
+        
+        if (cookieData) {
+            console.log('Logged Cookie:', cookieData);
+
+            // Optionally, display the logged cookie on the page
+            document.write('<h1>Logged Cookie:</h1>');
+            document.write('<p>' + decodeURIComponent(cookieData) + '</p>');
+        } else {
+            document.write('<h1>No cookie data found in the query parameters.</h1>');
+        }
+    </script>
+</body>
+</html>
