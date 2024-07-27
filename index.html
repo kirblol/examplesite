@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Cookie Logger</title>
+</head>
+<body>
+    <h1>Cookie Logger</h1>
+    <p id="log">Loading...</p>
     <script>
         window.onload = function() {
             try {
@@ -18,11 +22,7 @@
             } catch (error) {
                 console.error('Error processing the cookie data:', error);
             }
-        }
+        };
     </script>
-</head>
-<body>
-    <h1>Cookie Logger</h1>
-    <p id="log">Loading...</p>
 </body>
 </html>
